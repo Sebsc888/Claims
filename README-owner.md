@@ -33,7 +33,7 @@ It is free on GitHub Pages. It holds no patient data: the ledger stays in your G
 13. Print **install-poster.html** (Ctrl+P, A4) and put it near the desk, or open `https://YOURNAME.github.io/claims/install.html` on the phone.
 14. Android: open in **Chrome** → tap the big green **Install** button.
     iPhone: open in **Safari** → **Share** → **Add to Home Screen** → keep **Open as Web App** on → **Add**.
-15. Open **Claims** from the home screen and sign in with the username and PIN.
+15. Open **PFBeacon** (purple shield) from the home screen and sign in with the username and PIN.
 
 ## To turn it off (roll back)
 
@@ -71,3 +71,10 @@ Do this **only while App logins (PKG-01) are ON**. The older files have safety h
 ## When you update the phone app later
 
 **Do NOT replace your existing config.js. It holds your ledger link. The new file has placeholders and would break the app.** Upload every other file, and leave `config.js` as it is.
+
+## PFBeacon look (6 Nov evening)
+
+- The phone app is now **PFBeacon**: purple shield icon, banner on the install page, purple opening screen.
+- New files to upload: the whole `img` folder, `icons/favicon-32.png`, `icons/logo-shield.svg`, and the new icons (same names as before, they replace the green ones). Keep your `config.js`.
+- Phones that already have the green "Claims" icon: the name and picture update by themselves within a day or two on Android. On iPhone, delete the old icon and add it again from the install page.
+- **Share picture** (the preview when you send the install link on Messenger/Viber/WhatsApp): in `install.html` and `index.html`, change `img/og-share-1200x630.jpg` to the full address, e.g. `https://YOURNAME.github.io/claims/img/og-share-1200x630.jpg`. Some apps only show the picture with the full address.

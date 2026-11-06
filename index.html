@@ -3,23 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1D6A55">
+<meta name="theme-color" content="#460056">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Claims">
+<meta name="apple-mobile-web-app-title" content="PFBeacon">
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/favicon-32.png">
+<meta name="description" content="PFBeacon · Surgeon PF Tracker: claims, quotes and consultations.">
+<meta property="og:title" content="PFBeacon · Surgeon PF Tracker">
+<meta property="og:description" content="Every PF claimed. Every peso collected.">
+<meta property="og:image" content="img/og-share-1200x630.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>Claims</title>
+<title>PFBeacon</title>
 <style>
-  html,body{margin:0;height:100%;background:#1D6A55;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  html,body{margin:0;height:100%;background:#460056;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   #app{position:fixed;inset:0;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);background:#fff;box-sizing:border-box}
   #app iframe{border:0;width:100%;height:100%;display:block;background:#fff}
-  #wait,#off{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:#fff;background:#1D6A55;text-align:center;padding:24px;box-sizing:border-box}
+  #wait,#off{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:#fff;background:#460056;text-align:center;padding:24px;box-sizing:border-box}
   #off{display:none;cursor:pointer}
-  .logo{font-size:72px;font-weight:700;line-height:1}
+  .logo{width:96px;height:96px;border-radius:24px;display:block}
   .big{font-size:32px;font-weight:700;line-height:1.25}
   .small{font-size:21px;opacity:.92}
   a.alt{color:#fff;font-size:21px;text-decoration:underline;padding:12px}
@@ -27,9 +33,9 @@
 </head>
 <body>
 <div id="app"></div>
-<div id="wait"><div class="logo">₱</div><div class="big">Opening Claims…</div></div>
+<div id="wait"><img class="logo" src="icons/icon-192.png" alt=""><div class="big">Opening PFBeacon…</div></div>
 <div id="off" role="button" tabindex="0">
-  <div class="logo">₱</div>
+  <img class="logo" src="icons/icon-192.png" alt="">
   <div class="big">No internet.<br>Tap to try again</div>
   <div class="small" id="offmsg">Check Wi-Fi or mobile data.</div>
   <a class="alt" id="alt" href="#" target="_blank" rel="noopener">Open in Safari/Chrome instead</a>
@@ -80,14 +86,14 @@
     clearTimeout(timer); wait.style.display = 'none'; off.style.display = 'flex';
     var online = navigator.onLine !== false;   // the browser button needs a connection: only show it when there is one
     document.getElementById('alt').style.display = online ? '' : 'none';
-    document.getElementById('offmsg').textContent = online ? 'The Claims page is slow to open.' : 'Connect to the internet, then tap Try again.';
+    document.getElementById('offmsg').textContent = online ? 'PFBeacon is slow to open.' : 'Connect to the internet, then tap Try again.';
   }
   function start() {
     off.style.display = 'none'; wait.style.display = 'flex'; loaded = false;
     if (navigator.onLine === false) { showOffline(); return; }
     app.innerHTML = '';
     var f = document.createElement('iframe');
-    f.src = APP_URL; f.title = 'Surgical Claims Ledger';
+    f.src = APP_URL; f.title = 'PFBeacon';
     f.setAttribute('allow', 'clipboard-write');
     f.addEventListener('load', function () { loaded = true; showApp(); });
     app.appendChild(f);
