@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PFTest app poster</title>
+<style>
+  @page{size:A4;margin:12mm}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#14231e;background:#fff}
+  .sheet{width:186mm;min-height:270mm;margin:0 auto;padding:6mm 0;display:flex;flex-direction:column;gap:9mm}
+  h1{margin:0;text-align:center;font-size:30pt;color:#460056;line-height:1.15}
+  .sub{text-align:center;font-size:15pt;margin:0}
+  .qrwrap{display:flex;align-items:center;justify-content:center;gap:8mm}
+  .qr svg{width:88mm;height:88mm;display:block}
+  .scan{font-size:19pt;max-width:80mm}
+  .url{font-size:11pt;word-break:break-all;color:#456}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:9mm}
+  .col{border:2px solid #460056;border-radius:6mm;padding:5mm}
+  .col h2{margin:0 0 3mm;font-size:20pt;color:#460056}
+  ol{margin:0;padding-left:8mm;font-size:18pt;line-height:1.45}
+  ol li{margin-bottom:3mm}
+  .foot{text-align:center;font-size:12pt;color:#456;margin-top:auto}
+  .noprint{max-width:186mm;margin:10px auto;font-size:14px;background:#fff7e0;padding:10px;border-radius:8px}
+  @media print{.noprint{display:none}}
+</style>
+</head>
+<body>
+<div class="noprint">To print: press Ctrl+P (or ⌘P), choose A4. The QR code points to the address INSTALL_URL in config.js. Change it there if the address changes.</div>
+<div class="sheet">
+  <h1>Put the PFBeacon app on your phone</h1>
+  <p class="sub" id="clinic"></p>
+  <div class="qrwrap"><div class="qr" id="qr"></div>
+    <div class="scan"><b>1. Open your phone camera.</b><br><b>2. Point it at the square.</b><br><b>3. Tap the link that appears.</b><div class="url" id="url"></div></div></div>
+  <div class="cols">
+    <div class="col"><h2>Android</h2><ol>
+      <li>Open the link in <b>Chrome</b>.</li>
+      <li>Tap the big green <b>Install</b> button. (No button? Tap <b>⋮</b> at the top right, then <b>Install app</b>.)</li>
+      <li>Open <b>PFBeacon</b> from your home screen.</li></ol></div>
+    <div class="col"><h2>iPhone</h2><ol>
+      <li>Open the link in <b>Safari</b>. Tap <b>Share</b> (square with arrow up).</li>
+      <li>Tap <b>Add to Home Screen</b>.</li>
+      <li>Keep <b>Open as Web App</b> on. Tap <b>Add</b>. Open <b>PFBeacon</b> from your home screen.</li></ol></div>
+  </div>
+  <div class="foot">Sign in with your username and 4-number PIN. Forgot it? Ask the doctor.</div>
+</div>
+<script src="config.js"></script>
+<script src="qrcode.js"></script>
+<script>
+  var C = window.SCL_CONFIG || {}, u = C.INSTALL_URL || '';
+  document.getElementById('clinic').textContent = C.CLINIC_NAME || '';
+  document.getElementById('url').textContent = u;
+  try { var q = qrcode(0, 'M'); q.addData(u); q.make(); document.getElementById('qr').innerHTML = q.createSvgTag({ cellSize: 8, margin: 2, scalable: true }); } catch (x) {}
+</script>
+</body>
+</html>

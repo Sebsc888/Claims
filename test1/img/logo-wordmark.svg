@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-label="PFBeacon, surgeon PF tracker"><g transform="translate(8 8) scale(0.36)">
+  <path d="M256 30 C198 68 128 94 54 108 L54 248 C54 362 140 440 256 486 C372 440 458 362 458 248 L458 108 C384 94 314 68 256 30 Z" fill="#FFFFFF" stroke="#460056" stroke-width="34" stroke-linejoin="round"/>
+  <rect x="204" y="128" width="104" height="276" rx="28" fill="#B583FD"/>
+  <rect x="128" y="194" width="256" height="104" rx="28" fill="#B583FD"/>
+  <path d="M256 156 C261 186 272 193 298 198 C272 203 261 210 256 240 C251 210 240 203 214 198 C240 193 251 186 256 156 Z" fill="#FFFFFF"/>
+  <path d="M172 282 C248 278 318 254 368 196" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+  <path d="M186 280 C260 274 320 250 362 204" fill="none" stroke="#460056" stroke-width="10" stroke-linecap="round"/>
+  <path d="M336 270 L296 312" stroke="#FFFFFF" stroke-width="40" stroke-linecap="round"/>
+  <path d="M336 270 L296 312" stroke="#460056" stroke-width="26" stroke-linecap="round"/>
+  <path d="M326 282 L310 299" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <path d="M298 308 C284 330 256 350 210 358 C230 332 258 312 288 300 Z" fill="#460056" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M352 120 C354 133 359 138 372 140 C359 142 354 147 352 160 C350 147 345 142 332 140 C345 138 350 133 352 120 Z" fill="#460056"/>
+</g><text x="208" y="112" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="78" font-weight="700" fill="#460056" letter-spacing="-1">PFBeacon</text><text x="212" y="156" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="25" font-weight="600" fill="#460056" letter-spacing="5">SURGEON PF TRACKER</text></svg>
