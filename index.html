@@ -7,18 +7,18 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="PFBeacon">
+<meta name="apple-mobile-web-app-title" content="PFDev">
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/favicon-32.png">
 <meta name="description" content="PFBeacon · Surgeon PF Tracker: claims, quotes and consultations.">
 <meta property="og:title" content="PFBeacon · Surgeon PF Tracker">
 <meta property="og:description" content="Every PF claimed. Every peso collected.">
-<meta property="og:image" content="img/og-share-1200x630.jpg">
+<meta property="og:image" content="https://sebsc888.github.io/Claims/img/og-share-1200x630.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>PFBeacon</title>
+<title>PFDev</title>
 <style>
   html,body{margin:0;height:100%;background:#460056;overflow:hidden;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
   #app{position:fixed;inset:0;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);background:#fff;box-sizing:border-box}
@@ -45,7 +45,10 @@
 (function () {
   var C = window.SCL_CONFIG || {}, EXEC = String(C.EXEC_URL || '');
   var APP_URL = EXEC + (EXEC.indexOf('?') < 0 ? '?' : '&') + 'app=1';   // never put the sign-in in the address
-  var KEY = 'scl_token', UKEY = 'scl_user';
+  // Each phone app keeps its own saved sign-in (APP_ID in config.js), so two apps on one phone never wipe each other's.
+  // The development app at the top of the Claims site has no APP_ID and keeps the old names (its phones stay signed in).
+  var AID = /^[a-z0-9-]{1,20}$/.test(String(C.APP_ID || '')) ? ':' + C.APP_ID : '';
+  var KEY = 'scl_token' + AID, UKEY = 'scl_user' + AID;
   var app = document.getElementById('app'), wait = document.getElementById('wait'), off = document.getElementById('off');
   document.getElementById('alt').href = APP_URL;
   var timer = null, loaded = false;

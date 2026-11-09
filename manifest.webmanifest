@@ -1,6 +1,6 @@
 {
-  "name": "PFBeacon",
-  "short_name": "PFBeacon",
+  "name": "PFDev",
+  "short_name": "PFDev",
   "description": "Surgeon PF Tracker: claims, quotes and consultations.",
   "start_url": "./",
   "scope": "./",
@@ -9,8 +9,23 @@
   "theme_color": "#460056",
   "background_color": "#F3EAFE",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
